@@ -1,0 +1,68 @@
+# === Node.js ===
+node_modules/
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+dist/
+build/
+tmp/
+logs/
+*.log
+*.cache
+.vscode/
+
+# === Redis dump and config files ===
+dump.rdb
+appendonly.aof
+*.rdb
+*.aof
+
+# === OS/system files ===
+.DS_Store
+Thumbs.db
+
+# === React Frontend (Create React App or Vite) ===
+frontend/node_modules/
+frontend/build/
+frontend/dist/
+frontend/.env
+frontend/.env.*.local
+
+# === Backend ===
+backend/node_modules/
+backend/dist/
+backend/.env
+backend/.env.*.local
+
+# === PM2 and other deployment logs ===
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# === Coverage reports ===
+coverage/
+.nyc_output/
+
+# === IDEs and editors ===
+.idea/
+*.swp
+*.swo
+
+# === Docker files (if using Docker) ===
+*.tar
+*.img
+.dockerignore
+
+# === Prisma (if you're using it in backend) ===
+prisma/dev.db
+prisma/migrations/
+
+# === Misc ===
+*.tgz
