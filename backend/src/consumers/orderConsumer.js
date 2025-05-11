@@ -3,7 +3,6 @@ import Order from '../models/Order.js'
 import connectDB from '../dbConnect.js';
 
 await connectDB();
-// console.log("COnnecting db consumer");
 
 function isNumericKeyedObject(obj) {
   return (
@@ -41,7 +40,6 @@ async function processOrders() {
               let orderData = msg.message;
               if (isNumericKeyedObject(orderData)) {
                 orderData = arrayObjectToObject(orderData);
-                console.log("Converted numeric-keyed object to normal object.");
               }
               console.log('Order data to save:', orderData);
               try {
@@ -62,4 +60,4 @@ async function processOrders() {
   }
 }
 
-processOrders();
+await processOrders();

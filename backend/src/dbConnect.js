@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 
-// Set strictQuery to false to avoid deprecation warnings
+
 mongoose.set('strictQuery', false);
 
 // Use environment variable or default to local MongoDB

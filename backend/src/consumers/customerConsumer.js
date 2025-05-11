@@ -4,7 +4,7 @@ import connectDB from '../dbConnect.js';
 
 await connectDB();
 
-// Helper: Detect if object has only numeric keys (Redis Streams array format)
+// Helper fn: Detect if object has only numeric keys (Redis Streams array format)
 function isNumericKeyedObject(obj) {
   return (
     obj &&
@@ -13,7 +13,7 @@ function isNumericKeyedObject(obj) {
   );
 }
 
-// Helper: Convert numeric-keyed object to normal { field: value } object
+// Convert numeric-keyed object to normal { field: value } object
 function arrayObjectToObject(obj) {
   const out = {};
   const keys = Object.keys(obj).sort((a, b) => Number(a) - Number(b));
@@ -26,7 +26,7 @@ function arrayObjectToObject(obj) {
 }
 
 async function processCustomers() {
-  let lastId = '0-0'; // Start from the beginning
+  let lastId = '0-0'; 
 
   while (true) {
     try {
@@ -42,7 +42,6 @@ async function processCustomers() {
               let customerData = msg.message;
               if (isNumericKeyedObject(customerData)) {
                 customerData = arrayObjectToObject(customerData);
-                console.log("Converted numeric-keyed object to normal object.");
               }
               console.log('Customer data to save:', customerData);
               try {
