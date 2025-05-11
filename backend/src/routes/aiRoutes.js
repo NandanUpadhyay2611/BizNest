@@ -1,9 +1,9 @@
 import express from "express";
-import { saveCampaignController } from "../controllers/saveCampaignController.js";
+import { generateCampaignController } from "../controllers/generateCampaignController.js";
 
 const router = express.Router();
 
-
-router.post("/generate-campaign",saveCampaignController );
+// /api/ai
+router.post("/generate-campaign",generateCampaignController );
 
 export default router;
