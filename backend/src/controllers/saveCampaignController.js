@@ -39,7 +39,7 @@ export const saveCampaignController=async (req, res) => {
 
     // 2. Send to vendor API (simulate delivery)
 
-    axios.post("http://localhost:3000/api/vendor/send", {
+    axios.post("https://biznest-4q06.onrender.com/api/vendor/send", {
       logId: log._id,
       customer,
       campaign

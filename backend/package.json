@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
+    "@trigger.dev/sdk": "^3.3.17",
     "axios": "^1.9.0",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
@@ -18,5 +19,8 @@
     "google-auth-library": "^9.15.1",
     "mongoose": "^8.14.1",
     "redis": "^5.0.1"
+  },
+  "devDependencies": {
+    "@trigger.dev/build": "^3.3.17"
   }
 }

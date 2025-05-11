@@ -13,7 +13,7 @@ export default function SaveCampaignButton({ aiCampaign }) {
     setLoading(true);
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/segments",
+        "https://biznest-4q06.onrender.com/api/segments",
         aiCampaign, {
   headers: { Authorization: `Bearer ${user?.token}` }} 
       );

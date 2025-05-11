@@ -22,7 +22,18 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+# Trigger.dev
+# (No need to ignore /trigger folder itself-this is your task code!)
+.trigger/
+.trigger-cache/
+.triggerdev/
+.triggerdev-cache/
+trigger.dev.log
 
+# Vercel/Netlify/Render
+.vercel/
+.netlify/
+.render/
 # === Node.js ===
 node_modules/
 .env

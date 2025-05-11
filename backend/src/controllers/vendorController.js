@@ -12,7 +12,7 @@ export const vendorController= async (req, res) => {
   setTimeout(async () => {
     try {
       // Call your Delivery Receipt API (which queues the update in Redis)
-      await axios.post('http://localhost:3000/api/vendor/receipt', {
+      await axios.post('https://biznest-4q06.onrender.com/api/vendor/receipt', {
         logId,
         status
       });
@@ -29,5 +29,6 @@ export const recieptHelper=async (req, res) => {
   const { logId, status } = req.body;
   // Instead of updating DB directly, publish to Redis Stream for batch processing
   await publishToStream('deliveryReceiptStream', { logId, status });
+      await tasks.trigger("deliveryReceiptStream", {});
   res.json({ queued: true });
 }

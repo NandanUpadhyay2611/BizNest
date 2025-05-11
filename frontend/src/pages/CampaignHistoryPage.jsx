@@ -15,7 +15,7 @@ export default function CampaignHistoryPage() {
   useEffect(() => {
    
     
-    axios.get("http://localhost:3000/api/campaigns",{
+    axios.get("https://biznest-4q06.onrender.com/api/campaigns",{
   headers: { Authorization: `Bearer ${user.token}` }} ).then(res => {
       setCampaigns(res.data);
       setLoading(false);

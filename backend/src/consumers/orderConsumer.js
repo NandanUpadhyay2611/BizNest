@@ -23,10 +23,11 @@ function arrayObjectToObject(obj) {
   return out;
 }
 
-async function processOrders() {
-  let lastId = '0-0';  // read from the beginning of the stream
+export async function processOrders() {
+  // let lastId = '0-0';  // read from the beginning of the stream
+    let lastId = await redis.get("consumer:lastid") || "0-0";
 
-  while (true) {
+  // while (true) {
     try {
       const response = await redis.xRead(
         [{ key: 'orderStream', id: lastId }],
@@ -52,12 +53,13 @@ async function processOrders() {
             }
           }
         }
+           await redis.set("consumer:lastid", lastId);
       }
     } catch (err) {
       console.error('Error reading from Redis Stream:', err);
       await new Promise(res => setTimeout(res, 1000));
     }
   }
-}
+// }
 
-await processOrders();
+// await processOrders();

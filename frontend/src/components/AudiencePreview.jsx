@@ -9,8 +9,8 @@ export default function AudiencePreview({ rules }) {
 
   useEffect(() => {
     if (!rules) return;
-    
-    axios.post("http://localhost:3000/api/segments/preview", {rules} , {
+
+    axios.post("https://biznest-4q06.onrender.com/api/segments/preview", {rules} , {
   headers: { Authorization: `Bearer ${user?.token}` }} 
     )
       .then(res => setAudienceSize(res.data.audienceSize))

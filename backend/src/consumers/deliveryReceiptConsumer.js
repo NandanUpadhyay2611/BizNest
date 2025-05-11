@@ -7,11 +7,12 @@ import { generateCampaignSummary } from "../utils/aiSummary.js";
 
 await connectDB();
 
-async function processReceiptsBatch() {
-  let lastId = "0-0";
+export async function processReceiptsBatch() {
+
+    let lastId = await redis.get("consumer:lastid") || "0-0";
   const BATCH_SIZE = 20;
 
-  while (true) {
+  // while (true) {  // in production trigger the worker dont wun infinite loop
     const response = await redis.xRead(
       [{ key: "deliveryReceiptStream", id: lastId }],
       { BLOCK: 5000, COUNT: BATCH_SIZE }
@@ -56,7 +57,7 @@ async function processReceiptsBatch() {
           const campaignId = log.campaignId.toString();
           if (!campaignStats[campaignId])
             campaignStats[campaignId] = { sent: 0, failed: 0 };
-          if (data.status === "SENT" && campaignStats[campaignId].sent<=0) campaignStats[campaignId].sent += 1;
+          if (data.status === "SENT") campaignStats[campaignId].sent += 1;
           if (data.status === "FAILED") campaignStats[campaignId].failed += 1;
 
           lastId = msg.id;
@@ -88,10 +89,11 @@ async function processReceiptsBatch() {
       }
 
     
-    }
+      await redis.set("consumer:lastid", lastId);
+     }
   }
-}
 
 
-  await processReceiptsBatch();
+
+  // await processReceiptsBatch();
 

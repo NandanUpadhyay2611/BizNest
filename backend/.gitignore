@@ -54,7 +54,18 @@ coverage/
 .idea/
 *.swp
 *.swo
+# Trigger.dev
+# (No need to ignore /trigger folder itself-this is your task code!)
+.trigger/
+.trigger-cache/
+.triggerdev/
+.triggerdev-cache/
+trigger.dev.log
 
+# Vercel/Netlify/Render
+.vercel/
+.netlify/
+.render/
 # === Docker files (if using Docker) ===
 *.tar
 *.img
@@ -66,3 +77,5 @@ prisma/migrations/
 
 # === Misc ===
 *.tgz
+
+.trigger
