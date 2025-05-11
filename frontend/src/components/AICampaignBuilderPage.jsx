@@ -8,7 +8,7 @@ import AIResponseFlow from "./AIResponseFlow";
 import AudiencePreview from "./AudiencePreview";
 import SaveCampaignButton from "./SaveCampaignButton";
 import CodeView from "./CodeView";
-import Header from "./header";
+import Header from "./Header";
 import { useNavigate } from "react-router-dom";
 import { ClockFading } from "lucide-react";
 
