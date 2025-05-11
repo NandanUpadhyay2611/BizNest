@@ -1,4 +1,5 @@
 import { publishToStream } from '../services/redisService.js';
+import { tasks } from '@trigger.dev/sdk/v3';
 import axios from 'axios';
 
 export const vendorController= async (req, res) => {
