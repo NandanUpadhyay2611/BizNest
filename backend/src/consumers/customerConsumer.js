@@ -43,7 +43,7 @@ export async function processCustomers() {
               if (isNumericKeyedObject(customerData)) {
                 customerData = arrayObjectToObject(customerData);
               }
-              console.log('Customer data to save:', customerData);
+          
               try {
                 await Customer.create(customerData);
                 console.log(`Customer saved: ${JSON.stringify(customerData)}`);

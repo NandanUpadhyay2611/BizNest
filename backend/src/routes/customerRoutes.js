@@ -1,7 +1,8 @@
 
-
 import { customerController } from '../controllers/customersController.js';
-import router from './orderRoutes.js';
+import { Router } from 'express';
+
+const router = Router();
 
 
 // POST /api/customers
