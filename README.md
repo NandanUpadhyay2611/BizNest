@@ -1,6 +1,4 @@
-# 🚀 Xeno Mini CRM - The “Not-So-Mini” CRM That Could
-
-> _“Turning customer data into campaigns, insights, and questionable puns, at scale.”_
+# 🚀 Biznest - CRM platform made for Xeno's SDE assesment 2025
 
 ---
 
@@ -45,8 +43,8 @@ Welcome to the Xeno Mini CRM - a project so “mini” it uses **Redis Streams, 
 
 ### 1. Clone the Repo
 
-- git clone https://github.com/yourusername/xeno-mini-crm.git
-- cd xeno-mini-crm
+- git clone https://github.com/NandanUpadhyay2611/xeno-mini-crm.git
+- cd xeno-crm
 
 ### 2. Set Up the Backend
 
@@ -139,7 +137,6 @@ On Excalidraw: https://excalidraw.com/#json=JFqwqNM3D76o5RTsT6Upz,x4IF1CWZy8sNre
 
 - **Batch, event-driven delivery & logging**: Scalable, async, and as close to real-world as you’ll get in a take-home.
 - **AI-powered campaign summaries**: “Your campaign reached 1,284 users. 1,140 messages delivered. Customers with > ₹10K spend had a 95% delivery rate.” (AI wrote this so you don’t have to.)
-- **Drag-and-drop, visual campaign builder**: Because marketers deserve beautiful UIs too.
 - **Live audience preview**: No more “send and pray” - see your segment size in real time.
 - **Smart tagging & scheduling**: AI can suggest campaign tags and send times (or at least pretend to).
 - **Extensible architecture**: Want to add more AI, more channels, or more snark? Fork away.
@@ -152,7 +149,7 @@ On Excalidraw: https://excalidraw.com/#json=JFqwqNM3D76o5RTsT6Upz,x4IF1CWZy8sNre
 
 ---
 
-**Built with ❤️, ☕, and way too many LLM API calls.**
+**Built with ❤️, ☕**
 
 
 
