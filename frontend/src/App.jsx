@@ -6,6 +6,7 @@ import CampaignHistoryPage from "./pages/CampaignHistoryPage";
 import LoginButton from "./components/LoginButton";
 import ProtectedRoute from "./components/ProtectedRoute";
 import LandingPage from "./pages/LandingPage";
+import DynamicRuleBuilderPage from "./components/DynamicRuleBuilderPage";
 
 function App() {
   return (
@@ -27,6 +28,15 @@ function App() {
     element={
       <ProtectedRoute>
         <CampaignHistoryPage />
+      </ProtectedRoute>
+    }
+  />
+
+  <Route
+    path="/dynamic"
+    element={
+      <ProtectedRoute>
+        <DynamicRuleBuilderPage />
       </ProtectedRoute>
     }
   />

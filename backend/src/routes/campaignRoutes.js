@@ -11,4 +11,9 @@ router.get("/",async (req, res) => {
     res.json(campaigns);
   });
 
-  export default router;
+router.get("/total", async (req, res) => {
+  const total = await Campaign.countDocuments();
+  res.json({ total });
+});
+
+export default router;
