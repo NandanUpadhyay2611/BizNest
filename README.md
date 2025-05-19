@@ -14,6 +14,39 @@
 
 ---
 
+## Data Ingestion API 
+
+### 📬 POST /api/customers
+
+**Description:** Create a new customer.
+
+### 🔸 Request Body
+
+```json
+{
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "spend": 1200.75,
+  "visits": 10,
+  "lastActive": "2025-05-10T15:30:00.000Z"
+}
+```
+
+### 📬 POST /api/orders
+
+**Description:**  Create a new order for an existing customer.
+
+### 🔸 Request Body
+
+```json
+{
+  "customerId": "6649eb20981a5234f0a5d093", (replace with existing customer ID)
+  "amount": 350.00,
+  "date": "2025-05-18T12:00:00.000Z"
+}
+
+```
+
 ## What is this? (Intro & Features)
 
 Welcome to the Xeno Mini CRM - a project so “mini” it uses **Redis Streams, Google Gemini, and a drag-and-drop React flow editor** just to send you a coupon. This is a full-stack, AI-powered, scalable CRM platform built for the Xeno SDE Internship Assignment 2025. It’s got more features than your average startup’s Series A pitch:
@@ -31,7 +64,6 @@ Welcome to the Xeno Mini CRM - a project so “mini” it uses **Redis Streams, 
 
 ## How to Run Locally (Backend & Frontend)
 
-> _“May your local environment be ever in your favor.”_
 
 ### Prerequisites
 
@@ -73,27 +105,27 @@ Welcome to the Xeno Mini CRM - a project so “mini” it uses **Redis Streams, 
 ## .env Example
 
 <details>
-<summary>backend/.env</summary>
-- MONGODB_URI=your-mongodb-url
-- REDIS_URL=redis://localhost:6379
-- GOOGLE_CLIENT_ID=your-google-oauth-client-id.apps.googleusercontent.com
-- GEMINI_API_KEY=your-gemini-api-key
-- PORT=3000
+<summary><code>backend/.env</code></summary>
+
+<li> MONGODB_URI=your-mongodb-url</li>
+<li> REDIS_URL=redis://localhost:6379</li>
+<li> GOOGLE_CLIENT_ID=your-google-oauth-client-id.apps.googleusercontent.com </li>
+<li>GEMINI_API_KEY=your-gemini-api-key</li>
+<li>PORT=3000</li>
 
 </details>
 
 <details>
 <summary>frontend/.env</summary>
 
-- VITE_GOOGLE_CLIENT_ID=your-google-oauth-client-id.apps.googleusercontent.com
-
+<li>VITE_GOOGLE_CLIENT_ID=your-google-oauth-client-id.apps.googleusercontent.com</li>
+<li>VITE_BASE_URL=https://biznest-4q06.onrender.com</li>
 </details>
 
 ---
 
 ## Architecture Diagram
 
-> _“A picture is worth a thousand microservices.”_
 
 ![xeno-mini-crm-architecture](https://github.com/user-attachments/assets/9e8023c7-a237-4ad9-be56-141e24ee93f0)
 On Excalidraw: https://excalidraw.com/#json=JFqwqNM3D76o5RTsT6Upz,x4IF1CWZy8sNreJCqEqUpQ
